@@ -1,5 +1,6 @@
 import axios from "axios";
-import {addFile, setFiles} from "../reducers/fileReducer";
+import {addFile, deleteFileAction, setFiles} from "../reducers/fileReducer";
+import {addUploadFile, changeUploadFile, showUploader} from "../reducers/uploadReducer";
 
 export function getFiles(dirId) {
     return async dispatch => {
@@ -40,14 +41,17 @@ export function uploadFile(file, dirId) {
             if(dirId){
                 formData.append('parent', dirId);
             }
+            const uploadFile = {name: file.name, progress: 0, id: new Date()};
+            dispatch(showUploader());
+            dispatch(addUploadFile(uploadFile));
             const response = await axios.post(`http://localhost:5000/api/files/upload`, formData,{
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`},
                 onUploadProgress: progressEvent => {
                     const totalLength = progressEvent.lengthComputable ? progressEvent.total : progressEvent.target.getResponseHeader('content-length') || progressEvent.target.getResponseHeader('x-decompressed-content-length');
                     console.log('total', totalLength);
                     if(totalLength){
-                        let progress = Math.round((progressEvent.loaded * 100)/totalLength);
-                        console.log(progress);
+                        uploadFile.progress = Math.round((progressEvent.loaded * 100)/totalLength);
+                        dispatch(changeUploadFile(uploadFile));
                     }
                 }
             });
@@ -73,5 +77,21 @@ export async function downloadFile(file){
         document.body.appendChild(link);
         link.click()
         link.remove();
+    }
+}
+
+export function deleteFile(file) {
+    return async dispatch => {
+        try{
+            const response = await axios.delete(`http://localhost:5000/api/files?id=${file._id}`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            });
+            dispatch(deleteFileAction(file._id));
+            alert(response.data.message);
+        } catch (err) {
+            alert(err?.response?.data?.message);
+        }
     }
 }
