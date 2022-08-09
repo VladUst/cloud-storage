@@ -2,5 +2,6 @@
     "serverPort" : 5000,
     "dbUrl": "mongodb+srv://VladUst:892015687@cloud.2zkhn.mongodb.net/cloudstorage?retryWrites=true&w=majority",
     "jwtKey": "secret-cloud-storage-key",
-    "filePath": "D:\\PROJECTS\\WebProjects\\FulstackPractise\\cloud-storage\\server\\files"
+    "filePath": "D:\\PROJECTS\\WebProjects\\FulstackPractise\\cloud-storage\\server\\files",
+    "staticPath": "D:\\PROJECTS\\WebProjects\\FulstackPractise\\cloud-storage\\server\\static"
 }
