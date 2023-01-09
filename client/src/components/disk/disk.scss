@@ -1,0 +1,63 @@
+.disk{
+  margin-top: 20px;
+  &__btns{
+  display: flex;
+    align-items: center;
+  }
+  &__back {
+    margin-left: 10%;
+  }
+  &__create {
+    margin-left: 10px;
+  }
+  &__upload-input{
+    display: none;
+  }
+
+  &__upload-label{
+    border: 2px dashed var(--primary-color);
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    font: var(--font-l);
+  }
+  &__select{
+    font: var(--font-m);
+    margin-left: auto;
+    margin-right: 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 5px;
+    &:focus{
+      background: var(--dark);
+    }
+  }
+  &__list, &__plate{
+    height: 30px;
+    width: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: no-repeat center center;
+    background-size: contain;
+    margin: 10px;
+  }
+  &__list{
+    background-image: url("../../assets/img/list.svg");
+    margin-right: 10%;
+  }
+  &__plate{
+    background-image: url("../../assets/img/plate.svg");
+  }
+}
+.drop-area{
+  width: 100%;
+  height: calc(100vh - 50px - 40px);
+  margin: 20px;
+  border: dashed var(--primary-color) 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}

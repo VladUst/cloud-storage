@@ -1,0 +1,27 @@
+.link{
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.5s;
+  }
+  &:hover:after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.5s;
+  }
+}

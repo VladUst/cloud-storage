@@ -3,23 +3,23 @@ const File = require('../models/File');
 const config = require('config');
 
 class FileService {
-    createDir(file){
-        const filePath = `${config.get('filePath')}\\${file.user}\\${file.path}`;
+    createDir(req, file){
+        const filePath = this.getPath(req, file);
         return new Promise((resolve, reject) => {
             try{
                 if(!fs.existsSync(filePath)){
                     fs.mkdirSync(filePath);
-                    return resolve({message: 'file created'});
+                    return resolve({message: 'dir created'});
                 } else {
-                    return reject({message: 'file already exists'});
+                    return reject({message: 'dir already exists'});
                 }
             } catch (err){
-                return reject({message:"file error"});
+                return reject({message:"dir creation error"});
             }
         })
     }
-    deleteFile(file) {
-        const path = this.getPath(file);
+    deleteFile(req, file) {
+        const path = this.getPath(req, file);
         if(file.type === 'dir'){
             fs.rmdirSync(path);
         } else {
@@ -27,8 +27,8 @@ class FileService {
         }
     }
 
-    getPath(file) {
-        return config.get('filePath') + '\\' + file.user + '\\' + file.path;
+    getPath(req, file) {
+        return req.filePath + '\\' + file.user + '\\' + file.path;
     }
 }
 

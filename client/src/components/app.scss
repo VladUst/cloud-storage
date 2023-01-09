@@ -1,0 +1,41 @@
+:root {
+  --bg-color: #161d25;
+  --primary-color: #66FCF1;
+  --secondary-color: #224ac7;
+  --dark: #0B0C10;
+  --shadow-color: #3500D3;
+
+  --font-family-main: consolas, "Times New Roman", serif;
+  --font-size-m: 16px;
+  --font-line-m: 24px;
+  --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+  --font-size-l: 24px;
+  --font-line-l: 28px;
+  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+  --font-size-xl: 32px;
+  --font-line-xl: 40px;
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--primary-color);
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}

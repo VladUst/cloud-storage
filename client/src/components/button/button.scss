@@ -1,0 +1,35 @@
+.btn {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 500ms ease;
+  text-align: center;
+  background: transparent;
+  color: var(--primary-color);
+
+  &:hover {
+    background: #3500D3;
+    color: white;
+    box-shadow: 0 0 0 3px var(--primary-color);
+  }
+}
+
+.l {
+  font: var(--font-l);
+  width: 120px;
+}
+
+.s {
+  font: var(--font-l);
+  padding: 1px;
+  width: 30px;
+  &:hover {
+    background: transparent;
+    color: white;
+    box-shadow: none;
+  }
+}
+
+.m {
+  font: var(--font-m);
+}
