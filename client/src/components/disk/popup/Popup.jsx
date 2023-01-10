@@ -22,7 +22,7 @@ const Popup = () => {
             <div className="popup__content" onClick={event => {event.stopPropagation()}}>
                 <div className="popup__header">
                     <div className="popup__title">Создать новую папку</div>
-                    <Button onClick={()=>dispatch(setPopupDisplay('none'))} size={'s'}>X</Button>
+                    <Button onClick={()=>dispatch(setPopupDisplay('none'))} type={'exit'}>X</Button>
                 </div>
                 <Input type="text" placeholder="Введите название папки" value={dirName} setValue={setDirName}/>
                 <Button classnames={'popup__create'} onClick={()=> createHandler()} size={'l'}>Создать</Button>

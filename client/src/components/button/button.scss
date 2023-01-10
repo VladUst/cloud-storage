@@ -10,19 +10,18 @@
   &:hover {
     background: #3500D3;
     color: white;
-    box-shadow: 0 0 0 3px var(--primary-color);
+    filter: drop-shadow(0 0 0.75rem var(--primary-color));
+    box-shadow: 0 0 0 2px var(--primary-color);
   }
 }
 
 .l {
   font: var(--font-l);
-  width: 120px;
 }
 
-.s {
+.exit {
   font: var(--font-l);
-  padding: 1px;
-  width: 30px;
+  padding: 0 10px;
   &:hover {
     background: transparent;
     color: white;
@@ -32,4 +31,14 @@
 
 .m {
   font: var(--font-m);
+}
+
+.delete{
+  color: red;
+  &:hover {
+    background: #5b091d;
+    color: white;
+    filter: drop-shadow(0 0 0.5rem #b20b10);
+    box-shadow: 0 0 0 2px #b20b10;
+  }
 }

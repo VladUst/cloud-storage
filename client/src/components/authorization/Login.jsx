@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import './authorization.css'
+import './authorization.scss'
 import Input from "../input/Input";
 import {login} from "../../actions/user";
 import {useDispatch} from "react-redux";
+import Button from "../button/Button";
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -12,7 +13,7 @@ const Login = () => {
             <div className="authorization__header">Вход</div>
             <Input value={email} setValue={setEmail} type="text" placeholder="Введите email"/>
             <Input value={password} setValue={setPassword} type="password" placeholder="Введите пароль"/>
-            <button className="authorization__btn" onClick={() => dispatch(login(email, password))}>Вход</button>
+            <Button classnames="authorization__btn" size='l' onClick={() => dispatch(login(email, password))}>Вход</Button>
         </div>
     );
 };

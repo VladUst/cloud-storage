@@ -4,6 +4,7 @@
   &__header{
     display: grid;
     grid-template-columns: 1fr 4fr repeat(4, 1fr);
+    font: var(--font-l);
   }
   &__name{
     grid-column-start: 2;
@@ -20,8 +21,9 @@
 
 .fileplate{
   display: flex;
+  gap: 30px;
   flex-wrap: wrap;
-  margin: 20px 0;
+  margin: 30px 70px;
 }
 
 .file-enter-active{

@@ -1,5 +1,5 @@
 import React from 'react';
-import './filelist.css'
+import './filelist.scss'
 import {useSelector} from "react-redux";
 import File from "./file/File";
 import {CSSTransition, TransitionGroup} from "react-transition-group";

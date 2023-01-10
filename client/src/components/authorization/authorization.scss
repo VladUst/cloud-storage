@@ -1,29 +1,30 @@
-@import "../../utils/colors.scss";
 .authorization{
   display: flex;
   flex-direction: column;
   width: 500px;
   align-items: center;
-  background-color: white;
+  background-color: var(--dark);
   border-radius: 20px;
   padding: 30px;
   align-self: center;
   margin-top: 200px;
+  filter: drop-shadow(0 0 0.75rem var(--shadow-color));
   &__header{
     font-size: 30px;
     font-weight: 700;
   }
   &__btn{
     border: none;
-    background-color: @font-color;
+    background-color: black;
     border-radius: 8px;
     color: white;
     font-weight: 700;
     padding: 5px 10px;
-    align-self: flex-end;
+    align-self: center;
     margin-top: 10px;
+    width: 50%;
   }
   input{
-    margin: 10px 20px;
+    margin: 20px 20px;
   }
 }

@@ -1,10 +1,8 @@
-@import "../../../utils/colors.scss";
-
 .uploader{
   height: 300px;
   width: 300px;
   position: fixed;
-  background-color: @font-color;
+  background-color: var(--dark);
   bottom: 0;
   right: 0;
   padding: 20px;
@@ -15,8 +13,7 @@
     justify-content: space-between;
   }
   &__title{
-    color: @background-color;
-    font-size: 1.2rem;
+    font: var(--font-l);
   }
   &__close{
     padding: 3px;
@@ -24,10 +21,11 @@
 }
 
 .upload-file{
-  background-color: @background-color;
+  background-color: var(--bg-color);
   border-radius: 8px;
-  margin: 5px 0;
+  margin: 10px 0;
   padding: 5px 10px;
+  box-shadow: 0 0 0 2px var(--shadow-color);
   &__header{
     display: flex;
     justify-content: space-between;
@@ -35,17 +33,22 @@
   &__progress-bar{
     height: 1rem;
     border-radius: 8px;
-    background-color: @font-color;
+    background-color: var(--dark);
     display: flex;
     margin: 3px 0;
   }
+  &__remove{
+    font-size: 16px;
+  }
   &__upload-bar{
-    background-color: green;
+    background-color: var(--primary-color);
     border-radius: 8px;
   }
   &__percent{
-    color: @background-color;
+    color: var(--shadow-color);
     left: 50%;
+    transform: translateX(-50%);
     position: absolute;
+    font-weight: 900;
   }
 }

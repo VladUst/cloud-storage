@@ -102,7 +102,6 @@ export function deleteFile(file) {
                 }
             });
             dispatch(deleteFileAction(file._id));
-            alert(response.data.message);
         } catch (err) {
             alert(err?.response?.data?.message);
         }

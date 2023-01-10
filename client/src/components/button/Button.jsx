@@ -1,8 +1,8 @@
 import React from 'react';
 import './button.scss';
-const Button = ({type = 'rect', size = 's', children, classnames, onClick}) => {
+const Button = ({type = 'rect', size = 's', color, children, classnames, onClick}) => {
     return (
-        <button onClick={onClick} className={['btn', classnames, type, size].join(' ')}>{children}</button>
+        <button onClick={onClick} className={['btn', classnames, type, size, color].join(' ')}>{children}</button>
     );
 };
 

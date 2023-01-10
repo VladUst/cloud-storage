@@ -58,7 +58,6 @@ const Disk = () => {
             <>
                 <Loader/>
             </>
-
         )
     }
     return ( !dragEnter ?

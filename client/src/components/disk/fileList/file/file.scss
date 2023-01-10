@@ -1,0 +1,83 @@
+.file{
+  margin: 20px 0;
+  padding: 10px 0;
+  border-bottom: solid 2px var(--primary-color);
+  display: grid;
+  grid-template-columns: 1fr 4fr repeat(4, 0.5fr);
+  align-items: center;
+  transition: all 0.3s ease;
+  &:hover{
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 0.75rem var(--shadow-color));
+    box-shadow: 0 0 10px 2px var(--shadow-color);
+    border-radius: 10px;
+    border-bottom: none;
+  }
+  &__icon{
+    justify-self: center;
+  }
+  &__date{
+    grid-column-start: 5;
+    justify-self: center;
+  }
+  &__size{
+    grid-column-start: 6;
+    justify-self: center;
+  }
+  &__btn{
+    display: none;
+  }
+  &:hover &__date{
+    grid-column-start: 3;
+  }
+  &:hover &__size{
+    grid-column-start: 4;
+  }
+  &:hover &__download{
+    display: block;
+    cursor: pointer;
+    margin: 0 auto;
+  }
+  &:hover &__delete{
+    display: block;
+    fill: #c12c2c;
+    cursor: pointer;
+    margin: 0 auto;
+  }
+}
+
+.file-plate{
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  text-align: center;
+  &:hover{
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 0.75rem var(--shadow-color));
+  }
+  &__icon{
+    height: 100px;
+    width: 100px;
+  }
+  &__btns{
+    display: none;
+  }
+  &:hover &__btns{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+  }
+  &:hover &__download{
+    cursor: pointer;
+    margin-right: 30px;
+  }
+  &:hover &__delete{
+    fill: #c12c2c;
+    cursor: pointer;
+  }
+}
